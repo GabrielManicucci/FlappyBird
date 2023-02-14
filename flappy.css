@@ -1,0 +1,88 @@
+@font-face {
+  font-family: "Oswald";
+  src: url("./fonts/Oswald-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Pixel";
+  src: url("./fonts/Pixel.ttf");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Oswald";
+  background-color: #0d262d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+h1 {
+  color: #fff;
+}
+
+.content {
+  position: relative;
+  background-color: deepskyblue;
+  border: 5px solid dodgerblue;
+  width: 1000px;
+  height: 700px;
+  margin: 15px;
+  overflow: hidden;
+}
+
+.par-barreiras {
+  position: absolute;
+  top: 0;
+  /* border: 2px solid black; */
+  /* position: relative; */
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 130px;
+  height: 100%;
+}
+
+.barreira {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.corpo {
+  border-left: 2px solid;
+  border-right: 2px solid;
+  /* border-bottom: 2px solid; */
+  height: 180px;
+  background-image: linear-gradient(90deg, #639301, #a5e82e);
+  width: 80%;
+}
+
+.borda {
+  border: 2px solid;
+  background-image: linear-gradient(90deg, #639301, #a5e82e);
+  width: 100%;
+  height: 30px;
+}
+
+.bird {
+  position: absolute;
+  width: 50px;
+  left: calc(50% - 25px);
+  top: calc(50% - 25px);
+  top: 300px;
+}
+
+.pontuation {
+  position: absolute;
+  color: white;
+  top: 5px;
+  right: 10px;
+  font-family: "Pixel";
+  font-size: 40px;
+}
