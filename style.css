@@ -12,8 +12,13 @@
   box-sizing: border-box;
 }
 
+:root {
+  font-size: 62.5%;
+}
+
 body {
   margin: 0;
+  padding: 0;
   font-family: "Oswald";
   background-color: #0d262d;
   display: flex;
@@ -21,19 +26,31 @@ body {
   align-items: center;
   /* overflow: hidden; */
   overflow-x: hidden;
+  height: 100vh;
+  width: 100vw;
 }
 
 h1 {
   color: #fff;
+  font-size: 2.8rem;
+}
+
+main {
+  /* border: 2px solid white; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 1rem;
 }
 
 .content {
   position: relative;
   background-color: deepskyblue;
-  border: 5px solid dodgerblue;
-  width: 1100px;
-  height: 700px;
-  margin: 15px;
+  border: 0.5rem solid dodgerblue;
+  width: 90vw;
+  height: 83vh;
+  margin: 1.5rem;
   overflow: hidden;
 }
 
@@ -45,7 +62,7 @@ h1 {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  width: 130px;
+  width: 13rem;
   height: 100%;
 }
 
@@ -56,24 +73,24 @@ h1 {
 }
 
 .corpo {
-  border-left: 2px solid;
-  border-right: 2px solid;
+  border-left: 0.2rem solid;
+  border-right: 0.2rem solid;
   /* border-bottom: 2px solid; */
-  height: 180px;
+  /* height: 180px; */
   background-image: linear-gradient(90deg, #639301, #a5e82e);
-  width: 100px;
+  width: 10rem;
 }
 
 .borda {
-  border: 2px solid;
+  border: 0.2rem solid;
   background-image: linear-gradient(90deg, #639301, #a5e82e);
   width: 100%;
-  height: 30px;
+  height: 3rem;
 }
 
 .bird {
   position: absolute;
-  width: 50px;
+  width: 5rem;
   left: calc(50% - 25px);
   /* top: calc(50% - 25px);
   top: 300px; */
@@ -83,10 +100,10 @@ h1 {
 .pontuation {
   position: absolute;
   color: white;
-  top: 5px;
-  right: 10px;
+  top: 0.5rem;
+  right: 1rem;
   font-family: "Pixel";
-  font-size: 50px;
+  font-size: 5rem;
   z-index: 100;
 }
 
