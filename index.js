@@ -249,7 +249,7 @@ const botaoMenuFlappyBird = jogoFlappyBird.menu.botao
 
 
 botaoMenuFlappyBird.addEventListener('click', jogoFlappyBird.start)
-botaoMenuFlappyBird.addEventListener('ontouchstart', jogoFlappyBird.start)
+botaoMenuFlappyBird.addEventListener('touchstart', jogoFlappyBird.start)
 
 
 
