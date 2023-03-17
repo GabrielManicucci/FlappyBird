@@ -234,27 +234,22 @@ function FlappyBird() {
       barreiras.animar()
       passaro.animar()
 
-      // if (colidiu(passaro, barreiras)) {
-      //   clearInterval(temporizador)
-      // }
+      if (colidiu(passaro, barreiras)) {
+        clearInterval(temporizador)
+      }
     }, 20)
   } 
 
-  // this.startTeste = () => {
-    
-  // }
 }
 
 const jogoFlappyBird = new FlappyBird()
 // jogoFlappyBird.start()
 
 const botaoMenuFlappyBird = jogoFlappyBird.menu.botao
-// const funcaoStart = jogoFlappyBird.start
-// console.log(funcaoStart)
 
 
 botaoMenuFlappyBird.addEventListener('click', jogoFlappyBird.start)
-console.log(botaoMenuFlappyBird)
+botaoMenuFlappyBird.addEventListener('ontouchstart', jogoFlappyBird.start)
 
 
 
