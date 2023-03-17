@@ -187,10 +187,10 @@ class FlappyBird {
             const timer = setInterval(() => {
                 this.barriers.animate();
                 this.bird.animate();
-                // if (collided(this.bird, this.barriers)) {
-                //     clearInterval(timer);
-                //     startMenu.style.animation = "end 1s forwards";
-                // }
+                if (collided(this.bird, this.barriers)) {
+                    clearInterval(timer);
+                    startMenu.style.animation = "end 1s forwards";
+                }
             }, 20);
         };
         this.barriers.pares.forEach((par) => main_div.appendChild(par.element));

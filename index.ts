@@ -278,10 +278,10 @@ class FlappyBird {
         this.barriers.animate();
         this.bird.animate();
 
-        // if(collided(this.bird, this.barriers)) {
-        //   clearInterval(timer)
-        //   startMenu.style.animation = "end 1s forwards";
-        // }
+        if(collided(this.bird, this.barriers)) {
+          clearInterval(timer)
+          startMenu.style.animation = "end 1s forwards";
+        }
       }, 20);
     };
 
