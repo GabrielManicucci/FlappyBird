@@ -179,23 +179,20 @@ class FlappyBird {
             this.progress.setLevel(this.level3);
         });
         this.start = () => {
+            startMenu.style.animation = "start 1s forwards";
+            console.log("start game");
             const timer = setInterval(() => {
                 this.barriers.animate();
                 this.bird.animate();
+                if (collided(this.bird, this.barriers)) {
+                    clearInterval(timer);
+                    startMenu.style.animation = "end 1s forwards";
+                }
             }, 20);
-            setTimeout(() => {
-                clearInterval(timer);
-                startMenu.style.animation = "end 1s forwards";
-            }, 5000);
         };
         this.barriers.pares.forEach((par) => main_div.appendChild(par.element));
     }
 }
 const gameFlappyBird = new FlappyBird();
-const startGame = () => {
-    startMenu.style.animation = "start 1s forwards";
-    gameFlappyBird.start();
-    console.log("start game");
-};
-startButton.addEventListener("click", startGame);
-startButton.addEventListener("touchstart", startGame);
+startButton.addEventListener("click", () => gameFlappyBird.start());
+startButton.addEventListener("touchstart", () => gameFlappyBird.start());
