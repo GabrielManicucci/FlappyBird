@@ -88,9 +88,10 @@ class BarrierSet {
       new BarrierPair(width + space * 4, height, gap),
     ];
 
+    let newPoint = 0;
+    let offset = 3;
     this.animate = () => {
-      let newPoint = 0;
-      let offset = 3;
+      
       this.pares.forEach((par) => {
         const newPosition = par.getX() - offset;
         par.setX(newPosition);
@@ -106,6 +107,7 @@ class BarrierSet {
           console.log(newPoint);
         } else if (newPoint == 3) {
           offset = 5;
+          console.log(offset)
           scoring2();
         } else if (newPoint == 7) {
           offset = 7;
@@ -276,10 +278,10 @@ class FlappyBird {
         this.barriers.animate();
         this.bird.animate();
 
-        if(collided(this.bird, this.barriers)) {
-          clearInterval(timer)
-          startMenu.style.animation = "end 1s forwards";
-        }
+        // if(collided(this.bird, this.barriers)) {
+        //   clearInterval(timer)
+        //   startMenu.style.animation = "end 1s forwards";
+        // }
       }, 20);
     };
 
