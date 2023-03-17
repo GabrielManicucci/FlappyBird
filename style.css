@@ -54,7 +54,7 @@ main {
   overflow: hidden;
 }
 
-.par-barreiras {
+.barrierPair {
   position: absolute;
   top: 0;
   /* border: 2px solid black; */
@@ -66,13 +66,13 @@ main {
   height: 100%;
 }
 
-.barreira {
+.barrier {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.corpo {
+.body {
   border-left: 0.2rem solid;
   border-right: 0.2rem solid;
   /* border-bottom: 2px solid; */
@@ -81,7 +81,7 @@ main {
   width: 10rem;
 }
 
-.borda {
+.border {
   border: 0.2rem solid;
   background-image: linear-gradient(90deg, #639301, #a5e82e);
   width: 100%;
@@ -94,10 +94,9 @@ main {
   left: calc(50% - 25px);
   /* top: calc(50% - 25px);
   top: 300px; */
-
 }
 
-.pontuation {
+.score {
   position: absolute;
   color: white;
   top: 0.5rem;
@@ -111,7 +110,7 @@ main {
   display: none;
 }
 
-.nivel {
+.level {
   position: absolute;
   color: white;
   top: 6rem;
@@ -121,18 +120,23 @@ main {
   z-index: 100;
 }
 
-.menu {
-  position: absolute;
+#startMenu {
   display: flex;
-  height: 100%;
-  width: 100%;
-  background-color: #639301;
-  z-index: 200;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
+
+  position: absolute;
+
+  height: 100%;
+  width: 100%;
+
+  background-color: #639301;
+  z-index: 200;
 }
 
-.button {
+#startButton {
   display: flex;
   height: 8rem;
   width: 18rem;
@@ -141,15 +145,55 @@ main {
   background-color: #639301;
   border: 2px solid #fff;
   color: #fff;
-  font-size: 2rem;
+  font-size: 3rem;
+  border-radius: 1rem;
+  transition: all 0.2s ease-in-out;
+  position: relative;
 }
 
-.button:hover {
-  background-color: #a5e82e;
-  color: #050505;
+#startButton:hover {
+  background-color: #89c326;
+  color: white;
   cursor: pointer;
+  border-radius: 0px;
+  font-size: 4rem;
 }
 
-.hide {
-  display: none;
+#menuBird {
+  position: absolute;
+  top: -10rem;
+}
+
+#startButton:hover #menuBird {
+  animation: fly 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes fly {
+  0% {
+    transform: translateY(0) rotateZ(10deg);
+  }
+  100% {
+    transform: translateY(-3rem) rotateZ(-10deg);
+  }
+}
+
+@keyframes start {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-70rem);
+    opacity: 0;
+  }
+}
+
+@keyframes end {
+  0% {
+    transform: translateY(70rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
