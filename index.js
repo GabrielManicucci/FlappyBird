@@ -253,3 +253,4 @@ botaoMenuFlappyBird.addEventListener('touchstart', jogoFlappyBird.start)
 
 
 
+
