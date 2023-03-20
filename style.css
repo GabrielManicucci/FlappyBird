@@ -151,6 +151,45 @@ main {
   position: relative;
 }
 
+#restartButton {
+  display: flex;
+  height: 8rem;
+  width: 18rem;
+  justify-content: center;
+  align-items: center;
+  background-color: #639301;
+  border: 2px solid #fff;
+  color: #fff;
+  font-size: 3rem;
+  border-radius: 1rem;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+}
+
+#reButton {
+  font-family: 'Oswald';
+  background-color: #639301;
+  border: none;
+  color: #fff;
+  font-size: 3rem;
+  padding: 1.3rem 4.6rem;
+}
+
+#reButton:hover {
+  background-color: #89c326;
+  color: white;
+  cursor: pointer;
+  border-radius: 0px;
+}
+
+.restartButton:hover {
+  background-color: #89c326;
+  color: white;
+  cursor: pointer;
+  border-radius: 0px;
+  font-size: 4rem;
+}
+
 #startButton:hover {
   background-color: #89c326;
   color: white;

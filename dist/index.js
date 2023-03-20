@@ -1,11 +1,15 @@
 const main_div = document.getElementById("content");
 const startMenu = document.getElementById("startMenu");
 const startButton = document.getElementById("startButton");
+const restartButton = document.getElementById('reButton')
+const restartElement = document.getElementById('restartButton')
+
 function createNewElement(tagName, className) {
     const element = document.createElement(tagName);
     element.classList.add(className);
     return element;
 }
+
 class Barrier {
     constructor(reverse) {
         this.element = document.createElement("div");
@@ -17,6 +21,7 @@ class Barrier {
         this.setBodyHeight = (height) => (body.style.height = `${height}px`);
     }
 }
+
 class BarrierPair {
     constructor(x, height, gap) {
         this.element = document.createElement("div");
@@ -38,6 +43,7 @@ class BarrierPair {
         this.randomGap();
     }
 }
+
 class BarrierSet {
     constructor(width, space, height, gap, scoring, scoring2, scoring3) {
         this.width = main_div.clientWidth;
@@ -81,6 +87,7 @@ class BarrierSet {
         };
     }
 }
+
 class Bird {
     constructor(height) {
         this.flying = false;
@@ -117,6 +124,7 @@ class Bird {
         this.setY(height / 2);
     }
 }
+
 class Scoring {
     constructor() {
         this.element = document.createElement("div");
@@ -127,6 +135,7 @@ class Scoring {
         };
     }
 }
+
 class SettingLevel {
     constructor() {
         this.element = document.createElement("div");
@@ -137,6 +146,7 @@ class SettingLevel {
         };
     }
 }
+
 function areOverlapping(elementA, elementB) {
     const bird = elementA.getBoundingClientRect();
     const barrier = elementB.getBoundingClientRect();
@@ -146,6 +156,7 @@ function areOverlapping(elementA, elementB) {
         barrier.top + barrier.height >= bird.top;
     return horizontal && vertical;
 }
+
 function collided(bird, barriers) {
     let hasCollided = false;
     barriers.pares.forEach((par) => {
@@ -159,6 +170,7 @@ function collided(bird, barriers) {
     });
     return hasCollided;
 }
+
 class FlappyBird {
     constructor() {
         this.point = 0;
@@ -189,13 +201,25 @@ class FlappyBird {
                 this.bird.animate();
                 if (collided(this.bird, this.barriers)) {
                     clearInterval(timer);
+                    startButton.style.display = 'none'
                     startMenu.style.animation = "end 1s forwards";
+                    restartElement.style.display = 'flex'
+
+                    
                 }
             }, 20);
         };
         this.barriers.pares.forEach((par) => main_div.appendChild(par.element));
+        restartElement.style.display = 'none'
+
     }
 }
 const gameFlappyBird = new FlappyBird();
 startButton.addEventListener("click", () => gameFlappyBird.start());
 startButton.addEventListener("touchstart", () => gameFlappyBird.start());
+
+restartButton.addEventListener('click', () => {
+    location.reload()
+})
+restartButton.addEventListener("touchstart", () => location.reload());
+console.log(restartElement)

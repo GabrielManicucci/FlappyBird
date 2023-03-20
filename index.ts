@@ -1,6 +1,8 @@
 const main_div = document.getElementById("content");
 const startMenu = document.getElementById("startMenu");
 const startButton = document.getElementById("startButton");
+const restartButton = document.getElementById('reButton')
+const restartElement = document.getElementById('restartButton')
 
 function createNewElement(tagName: string, className: string) {
   const element = document.createElement(tagName);
@@ -280,12 +282,16 @@ class FlappyBird {
 
         if(collided(this.bird, this.barriers)) {
           clearInterval(timer)
+          startButton.style.display = 'none'
           startMenu.style.animation = "end 1s forwards";
+          restartElement.style.display = 'flex'
         }
       }, 20);
     };
 
     this.barriers.pares.forEach((par) => main_div.appendChild(par.element));
+    restartElement.style.display = 'none'
+
   }
 }
 
@@ -293,3 +299,7 @@ const gameFlappyBird = new FlappyBird();
 
 startButton.addEventListener("click", () => gameFlappyBird.start());
 startButton.addEventListener("touchstart", () => gameFlappyBird.start());
+restartButton.addEventListener('click', () => {
+  location.reload()
+})
+restartButton.addEventListener("touchstart", () => location.reload());
